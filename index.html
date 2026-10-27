@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Free Lab · Ayumi & Mike</title>
+<meta name="description" content="Free content tools and templates from Ayumi & Mike.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Manrope:wght@400;500;700&display=swap">
+<style>
+/* One column of tool cards under a big serif title. Single dark look. */
+:root {
+  --bg: #0b0a09; --panel: #151311; --line: #2a2622; --fg: #f5f2ec; --muted: #a39c92; --beige: #d9c4a3;
+  --display: "Cormorant Garamond", "Times New Roman", serif; --body: "Manrope", "Segoe UI", system-ui, sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 16px; line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.wrap { max-width: 680px; margin: 0 auto; padding-block: 48px 64px; display: grid; gap: 40px; }
+.eyebrow { font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: var(--beige); font-weight: 700; }
+h1 { font-family: var(--display); font-weight: 500; font-size: clamp(72px, 20vw, 140px); line-height: .9; margin: 12px 0 18px; }
+h1 em { color: var(--beige); }
+.lede { color: var(--muted); margin: 0; max-width: 50ch; }
+.list { display: grid; gap: 14px; }
+.card { display: grid; grid-template-columns: 1fr auto; gap: 6px 16px; align-items: center; padding: 22px; border: 1px solid var(--line); border-radius: 14px;
+  background: var(--panel); color: inherit; text-decoration: none; transition: border-color .2s, transform .2s; }
+a.card:hover { border-color: var(--beige); transform: translateY(-2px); }
+a.card:focus-visible { outline: 2px solid var(--beige); outline-offset: 3px; }
+.card h2 { font-family: var(--display); font-weight: 500; font-size: 32px; line-height: 1.05; margin: 0; }
+.card p { grid-column: 1 / -1; margin: 0; color: var(--muted); font-size: 15px; }
+.tag { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--beige); border: 1px solid #d9c4a355; border-radius: 999px; padding: 4px 10px; white-space: nowrap; }
+.arrow { grid-column: 1 / -1; color: var(--beige); font-weight: 700; font-size: 14px; }
+.soon { opacity: .55; }
+.section { font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); margin: 8px 0 -4px; }
+footer { font-size: 13px; color: var(--muted); text-align: center; }
+footer b { color: var(--beige); font-weight: 500; font-family: var(--display); font-size: 17px; }
+@media (prefers-reduced-motion: reduce) { .card { transition: none; } }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header>
+    <div class="eyebrow">Ayumi &amp; Mike</div>
+    <h1>Free <em>Lab</em></h1>
+    <p class="lede">Free tools and templates to make better content, faster. Built with our own time and effort. Take what helps.</p>
+  </header>
+
+  <div class="list">
+    <a class="card" href="script-templates/">
+      <h2>Script Templates</h2><span class="tag">No AI needed</span>
+      <p>12 fill-in-the-blank scripts with the new story hooks built in. Talking head, POV reels and product videos.</p>
+      <span class="arrow">Get the templates →</span>
+    </a>
+    <a class="card" href="hook-writer/">
+      <h2>Hook Writer</h2><span class="tag">Claude Pro</span>
+      <p>Researches the hooks working right now in your niche, then writes 10 proven formats for your business.</p>
+      <span class="arrow">Get the Hook Writer →</span>
+    </a>
+    <a class="card" href="post-analyzer/">
+      <h2>Post Analyzer Lite</h2><span class="tag">Claude Pro</span>
+      <p>Drop in 2 screenshots of a post that flopped. It compares it with what's working in your niche and tells you how to fix it.</p>
+      <span class="arrow">Get the Post Analyzer →</span>
+    </a>
+
+    <div class="section">Coming soon</div>
+    <div class="card soon"><h2>Proven Topic Finder</h2><span class="tag">Soon</span></div>
+    <div class="card soon"><h2>Caption Polisher</h2><span class="tag">Soon</span></div>
+    <div class="card soon"><h2>10-Minute Monthly Content Plan</h2><span class="tag">Soon</span></div>
+  </div>
+
+  <footer>Made with care by <b>Ayumi &amp; Mike</b> · @ayumiandmike</footer>
+</main>
+</body>
+</html>
