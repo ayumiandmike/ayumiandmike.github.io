@@ -39,3 +39,5 @@ body.premium::after { content: ""; position: fixed; inset: 0; z-index: -1;
   background: linear-gradient(90deg, rgba(11,10,9,.72) 0%, rgba(11,10,9,.45) 50%, rgba(11,10,9,.72) 100%), linear-gradient(180deg, rgba(11,10,9,.25) 0%, rgba(11,10,9,.55) 100%); }
 body.premium .card, body.premium .plan, body.premium .steps li { background: rgba(17,15,13,.82); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
 body.premium h1, body.premium .lede, body.premium h2 { text-shadow: 0 2px 18px rgba(0,0,0,.65); }
+/* Home page uses the empty studio scene (made in ChatGPT in the show's style). */
+body.premium.home::before { background-image: url("bg-home.jpg"); background-position: center 60%; }
