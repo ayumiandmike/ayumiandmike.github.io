@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Paid Lab · Ayumi & Mike</title>
+<meta name="description" content="The engines behind Ayumi & Mike's content, packed so Claude runs them for you.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Manrope:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="../assets/lab.css">
+<style>
+.feature { display: grid; grid-template-columns: 160px 1fr; gap: 22px; align-items: center; }
+.feature video { width: 100%; aspect-ratio: 9/16; object-fit: cover; border-radius: 12px; border: 1px solid var(--line); display: block; }
+.feature .body { display: grid; gap: 8px; min-width: 0; }
+.feature h3 { font-size: 40px; }
+@media (max-width: 560px) { .feature { grid-template-columns: 110px 1fr; gap: 16px; } .feature h3 { font-size: 32px; } }
+</style>
+</head>
+<body class="premium">
+<main class="wrap">
+  <header>
+    <a class="back" href="../">← The Lab</a>
+    <div class="eyebrow" style="margin-top:18px">Ayumi &amp; Mike</div>
+    <h1>Paid <em>Lab</em></h1>
+    <p class="lede">The engines we actually use behind our own content. You set them up once in Claude, answer a few questions, and Claude does the heavy lifting.</p>
+  </header>
+
+  <div class="list">
+    <a class="card feature" href="../tooncast/">
+      <video src="../tooncast/demo.mp4" autoplay muted loop playsinline aria-label="ToonCast demo: two 3D characters talking in a cozy room"></video>
+      <div class="body">
+        <span class="tag" style="justify-self:start">From $29 · Coming soon</span>
+        <h3>ToonCast</h3>
+        <div class="eyebrow" style="letter-spacing:.14em">3D Animated Talk Show Engine</div>
+        <p style="margin:0;color:var(--muted)">Turn yourself into a 3D cartoon character and post animated talk-show Reels without filming. Send a photo, give a topic, and Claude makes the finished video.</p>
+        <p style="margin:0;font-size:14px">Two versions: <b>ToonCast Studio</b> ($29) · <b>ToonCast Studio + Viral Engine</b> ($49)</p>
+        <span class="arrow">See ToonCast →</span>
+      </div>
+    </a>
+
+    <div class="section">In the works</div>
+    <div class="card soon"><h3>Talking-Head Style Pack</h3><span class="tag">Soon</span><p>Premium talking-head edits with the caption, banner and B-roll rules we use for paying clients.</p></div>
+    <div class="card soon"><h3>Documentary Edit Engine</h3><span class="tag">Soon</span><p>Turn interviews and B-roll into a Netflix-style mini documentary.</p></div>
+  </div>
+
+  <footer>Looking for free tools? <a href="../free-lab/">See the Free Lab</a> · Made with care by <b>Ayumi &amp; Mike</b></footer>
+</main>
+</body>
+</html>
