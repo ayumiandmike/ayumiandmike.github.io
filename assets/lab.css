@@ -34,7 +34,8 @@ footer a { color: var(--beige); }
 
 /* Paid Lab: dark, blurred Ayumi & Mike room behind everything so it feels premium but text stays readable. */
 body.premium { background: var(--bg); }
-body.premium::before { content: ""; position: fixed; inset: 0; z-index: -2; background: url("bg-room.jpg") center 30% / cover no-repeat; filter: blur(3px) saturate(1.1); transform: scale(1.04); }
+body.premium::before { content: ""; position: fixed; inset: 0; z-index: -2; background: url("bg-room.jpg") center 30% / cover no-repeat; filter: blur(1px) saturate(1.15); transform: scale(1.02); }
 body.premium::after { content: ""; position: fixed; inset: 0; z-index: -1;
-  background: radial-gradient(ellipse at 50% 0%, rgba(11,10,9,.62) 0%, rgba(11,10,9,.86) 55%, rgba(11,10,9,.95) 100%); }
-body.premium .card, body.premium .plan, body.premium .steps li { background: rgba(21,19,17,.78); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+  background: linear-gradient(90deg, rgba(11,10,9,.72) 0%, rgba(11,10,9,.45) 50%, rgba(11,10,9,.72) 100%), linear-gradient(180deg, rgba(11,10,9,.25) 0%, rgba(11,10,9,.55) 100%); }
+body.premium .card, body.premium .plan, body.premium .steps li { background: rgba(17,15,13,.82); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+body.premium h1, body.premium .lede, body.premium h2 { text-shadow: 0 2px 18px rgba(0,0,0,.65); }
