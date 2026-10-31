@@ -31,3 +31,10 @@ footer { font-size: 13px; color: var(--muted); text-align: center; }
 footer b { color: var(--beige); font-weight: 500; font-family: var(--display); font-size: 17px; }
 footer a { color: var(--beige); }
 @media (prefers-reduced-motion: reduce) { .card { transition: none; } }
+
+/* Paid Lab: dark, blurred Ayumi & Mike room behind everything so it feels premium but text stays readable. */
+body.premium { background: var(--bg); }
+body.premium::before { content: ""; position: fixed; inset: 0; z-index: -2; background: url("bg-room.jpg") center 30% / cover no-repeat; filter: blur(3px) saturate(1.1); transform: scale(1.04); }
+body.premium::after { content: ""; position: fixed; inset: 0; z-index: -1;
+  background: radial-gradient(ellipse at 50% 0%, rgba(11,10,9,.62) 0%, rgba(11,10,9,.86) 55%, rgba(11,10,9,.95) 100%); }
+body.premium .card, body.premium .plan, body.premium .steps li { background: rgba(21,19,17,.78); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
