@@ -1,0 +1,134 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Reel Formats for Coaches</title>
+<meta name="description" content="30 reel formats for coaches, each with a fill-in script and a real-looking example frame. Pick one, post it every day.">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;700&display=swap">
+<style>
+/* Layout: one narrow centered column, film frame up top, quiet sections, a single beige call to action. Single dark look by choice. */
+:root {
+  --bg: #0b0a09;
+  --panel: #151311;
+  --line: #2a2622;
+  --fg: #f5f2ec;
+  --muted: #a39c92;
+  --beige: #d9c4a3;
+  --beige-deep: #b89f7a;
+  --display: "Cormorant Garamond", "Times New Roman", serif;
+  --body: "Manrope", "Segoe UI", system-ui, sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--fg); font-family: var(--body);
+  font-size: 16px; line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.wrap { max-width: 640px; margin: 0 auto; padding-block: 40px 64px; display: grid; gap: 48px; }
+.eyebrow { font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: var(--beige); font-weight: 700; }
+h1 { font-family: var(--display); font-weight: 500; font-size: clamp(72px, 20vw, 132px); line-height: .9; letter-spacing: -.01em; margin: 12px 0 18px; text-wrap: balance; }
+h1 em { color: var(--beige); font-style: italic; }
+h2 { font-family: var(--display); font-weight: 500; font-size: 32px; line-height: 1.1; margin: 0 0 18px; text-wrap: balance; }
+.lede { color: var(--muted); margin: 0; max-width: 52ch; }
+
+/* Install film */
+.film { border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: var(--panel); }
+.film video { display: block; width: 100%; height: auto; }
+.mock { aspect-ratio: 16/10; max-width: 100%; display: grid; place-items: center; padding: 24px; }
+.mock ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; width: 100%; max-width: 420px; }
+.mock li { display: flex; gap: 14px; align-items: baseline; opacity: .35; transition: opacity .4s; font-size: 15px; }
+.mock li.on { opacity: 1; }
+.mock li b { font-family: var(--display); color: var(--beige); font-size: 22px; min-width: 18px; }
+.mock code { color: var(--beige); background: #0006; padding: 2px 7px; border-radius: 6px; font-size: 14px; }
+.howto { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; border-bottom: 1px solid var(--line); padding-bottom: 10px; }
+.howto span { font-family: var(--display); font-size: 34px; line-height: 1; }
+.howto em { font-style: normal; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--beige); }
+.film figcaption { font-size: 13px; color: var(--muted); padding: 12px 16px; border-top: 1px solid var(--line); }
+
+/* What you get */
+.gets { display: grid; gap: 22px; margin: 0; padding: 0; list-style: none; }
+.gets li { display: grid; grid-template-columns: 34px 1fr; gap: 12px; }
+.gets .n { font-family: var(--display); font-size: 26px; color: var(--beige); line-height: 1.1; }
+.gets strong { display: block; font-weight: 700; }
+.gets span { color: var(--muted); font-size: 15px; }
+
+.sample { border-left: 2px solid var(--beige); padding: 4px 0 4px 18px; display: grid; gap: 6px; }
+.sample .k { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.sample q { font-family: var(--display); font-size: 26px; line-height: 1.2; quotes: "\201C" "\201D"; }
+
+/* Download */
+.cta { display: grid; gap: 16px; padding: 28px 22px; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); }
+.notice { font-size: 14px; color: var(--fg); background: #d9c4a314; border: 1px solid #d9c4a340; border-radius: 10px; padding: 12px 14px; }
+.notice b { color: var(--beige); }
+.dl { display: block; text-align: center; text-decoration: none;
+  font: 700 16px/1 var(--body); letter-spacing: .02em; color: #14110d; background: var(--beige);
+  border: 0; border-radius: 999px; padding: 18px 26px; cursor: pointer; transition: background .2s, transform .2s;
+}
+.dl:hover { background: var(--fg); }
+.dl:active { transform: scale(.98); }
+.dl:focus-visible { outline: 2px solid var(--fg); outline-offset: 3px; }
+.status { font-size: 14px; color: var(--muted); min-height: 1.4em; margin: 0; }
+.steps { margin: 0; padding-left: 20px; color: var(--muted); font-size: 15px; display: grid; gap: 6px; }
+.steps code { color: var(--beige); }
+.mobile-note { display: none; font-size: 14px; color: var(--beige); }
+@media (max-width: 700px) and (pointer: coarse) { .mobile-note { display: block; } }
+
+footer { font-size: 13px; color: var(--muted); text-align: center; }
+footer b { color: var(--beige); font-weight: 500; font-family: var(--display); font-size: 17px; }
+@media (prefers-reduced-motion: reduce) { .mock li { transition: none; } }
+.strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 0; }
+.strip img { width: 100%; aspect-ratio: 9/16; object-fit: cover; border-radius: 10px; border: 1px solid var(--line); display: block; }
+.dl.ghost { background: transparent; color: var(--fg); border: 1px solid var(--beige); }
+.dl.ghost:hover { background: #d9c4a31a; }
+</style>
+
+<main class="wrap">
+  <header>
+    <div class="eyebrow">Free Lab · Ayumi &amp; Mike</div>
+    <h1>Reel <em>Formats</em></h1>
+    <p class="lede">30 proven reel formats for fitness and business coaches. Each one comes with a fill-in-the-blank script and an example frame so you can see exactly what to film. Pick one. Post it every day.</p>
+  </header>
+
+  <section style="display:grid;gap:14px">
+    <div class="howto"><span>What they look like</span><em>6 of 30</em></div>
+    <div class="strip">
+      <img src="f03.jpg" alt="Example frame: car talk selfie">
+      <img src="f01.jpg" alt="Example frame: what I eat in a day">
+      <img src="f17.jpg" alt="Example frame: Dallas park bootcamp recap">
+      <img src="f06.jpg" alt="Example frame: form check with a client">
+      <img src="f21.jpg" alt="Example frame: Dallas stairs workout spot">
+      <img src="f27.jpg" alt="Example frame: spots open soft-sell">
+    </div>
+  </section>
+
+  <section>
+    <h2>What's inside</h2>
+    <ul class="gets">
+      <li><div class="n">30</div><div><strong>Formats in 6 groups</strong><span>Your day &amp; personality, teach something, bust a myth, proof &amp; client stories, local &amp; community, soft-sell your coaching.</span></div></li>
+      <li><div class="n">✓</div><div><strong>A script for each one</strong><span>A one-line formula, 3 fill-in steps, how to turn it into a daily series, and an example.</span></div></li>
+      <li><div class="n">✓</div><div><strong>An example frame for each one</strong><span>So you know the angle and setting before you press record: car, kitchen, gym floor, the park.</span></div></li>
+      <li><div class="n">✓</div><div><strong>A 30-day tracker</strong><span>Tick off each day, write the topic and views, and see what's working after a month.</span></div></li>
+    </ul>
+  </section>
+
+  <section class="sample" aria-label="Example">
+    <div class="k">Format 03 · Car Talk</div>
+    <q>A client asked me: [real question].</q>
+    <div class="k">Filled in: “A client asked me if she has to quit drinking to lose weight.”</div>
+  </section>
+
+  <section class="cta" id="download">
+    <h2 style="margin:0">Get it free</h2>
+    <div class="notice"><b>No Claude or AI needed.</b> Open it on your phone, or download it to edit in Word or Google Docs.</div>
+    <a class="dl" href="30-Reel-Formats-for-Coaches.pdf" target="_blank" rel="noopener">Open the guide (PDF)</a>
+    <a class="dl ghost" href="30-Reel-Formats-for-Coaches.docx" download>Download the editable version (Word)</a>
+    <ol class="steps">
+      <li>Pick <strong>one</strong> format that feels easy for you.</li>
+      <li>Type over the <code>[brackets]</code> with your own clients and numbers.</li>
+      <li>Post it every day for 30 days and tick it off on the tracker.</li>
+    </ol>
+  </section>
+
+  <footer><a href="../free-lab/" style="color:var(--beige)">← All Free Lab tools</a> · Made with care by <b>Ayumi &amp; Mike</b> · want scripts with the new hooks? Try the free <a href="../script-templates/" style="color:var(--beige)">Script Templates</a></footer>
+</main>
+</html>
