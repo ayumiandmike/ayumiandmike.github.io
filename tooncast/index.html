@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ToonCast: 3D Animated Talk Show Engine · Ayumi & Mike</title>
+<meta name="description" content="Your own 3D animated talk show. Send a photo, and Claude turns you into a character and makes finished episodes.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Manrope:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="../assets/lab.css">
+<style>
+/* Hero: copy left, phone-shaped demo right. Then steps, two plans, requirements, FAQ. */
+.hero { display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: center; }
+.hero .copy { min-width: 0; }
+.phone { justify-self: center; width: min(320px, 100%); border-radius: 26px; padding: 8px; background: #1b1815; border: 1px solid var(--line); box-shadow: 0 30px 60px #0008; }
+.phone video { display: block; width: 100%; aspect-ratio: 9/16; object-fit: cover; border-radius: 20px; }
+.phone figcaption { text-align: center; font-size: 12px; color: var(--muted); padding: 10px 6px 4px; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+.btn { display: inline-block; text-align: center; text-decoration: none; font: 700 15px/1 var(--body); padding: 16px 24px; border-radius: 999px; border: 1px solid var(--beige); color: var(--fg); cursor: pointer; background: transparent; }
+.btn.solid { background: var(--beige); color: var(--ink); }
+.btn[aria-disabled="true"] { cursor: default; }
+
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; counter-reset: s; list-style: none; margin: 0; padding: 0; }
+.steps li { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 20px; display: grid; gap: 6px; align-content: start; }
+.steps li::before { counter-increment: s; content: counter(s); font-family: var(--display); font-size: 40px; line-height: 1; color: var(--beige); }
+.steps b { font-size: 17px; }
+.steps span { color: var(--muted); font-size: 15px; }
+
+.plans { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: stretch; }
+.plan { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 26px 24px; display: grid; gap: 14px; align-content: start; }
+.plan.best { border-color: var(--beige); position: relative; }
+.plan .ribbon { position: absolute; top: -12px; left: 24px; background: var(--beige); color: var(--ink); font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; border-radius: 999px; padding: 5px 12px; }
+.plan h3 { font-family: var(--display); font-weight: 500; font-size: 34px; line-height: 1.05; margin: 0; }
+.price { display: flex; align-items: baseline; gap: 10px; }
+.price b { font-family: var(--display); font-size: 56px; font-weight: 500; line-height: 1; }
+.price s { color: var(--muted); font-size: 18px; }
+.price small { color: var(--beige); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
+.plan ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 9px; }
+.plan li { display: grid; grid-template-columns: 20px 1fr; gap: 8px; font-size: 15px; }
+.plan li::before { content: "✓"; color: var(--beige); font-weight: 700; }
+.plan li.plus::before { content: "+"; }
+.plan .btn { margin-top: 6px; width: 100%; }
+.note { font-size: 13px; color: var(--muted); margin: 0; }
+
+.need { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.need div { border-top: 1px solid var(--line); padding-top: 14px; }
+.need b { display: block; }
+.need span { color: var(--muted); font-size: 14px; }
+
+details { border-top: 1px solid var(--line); padding: 16px 0; }
+details:last-of-type { border-bottom: 1px solid var(--line); }
+summary { cursor: pointer; font-weight: 700; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+summary::after { content: "+"; color: var(--beige); font-size: 20px; line-height: 1; }
+details[open] summary::after { content: "–"; }
+details p { color: var(--muted); margin: 10px 0 0; max-width: 64ch; }
+
+@media (max-width: 760px) {
+  .hero { grid-template-columns: 1fr; gap: 28px; }
+  .phone { width: min(280px, 100%); }
+  .steps, .plans, .need { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body class="premium">
+<main class="wrap wide">
+  <a class="back" href="../paid-lab/">← Paid Lab</a>
+
+  <section class="hero">
+    <div class="copy">
+      <div class="eyebrow">Paid Lab · Ayumi &amp; Mike</div>
+      <h1>Toon<em>Cast</em></h1>
+      <p style="font-size:clamp(20px,4vw,26px);font-weight:700;margin:0 0 14px;line-height:1.25">The 3D Animated Talk Show Engine for Claude</p>
+      <p class="lede">Turn yourself into a 3D cartoon character and post animated talk-show Reels, TikToks and Shorts without ever filming. Send a photo, answer 5 questions, and Claude builds your characters, your room and your voices, then makes finished episodes with lip-sync, captions and camera moves.</p>
+      <div class="cta-row">
+        <a class="btn solid" href="#plans">See the two versions</a>
+        <a class="btn" href="#how">How it works</a>
+      </div>
+    </div>
+    <figure class="phone" style="margin:0">
+      <video src="demo.mp4" autoplay muted loop playsinline controls preload="auto" aria-label="Demo: an episode of our own show made with ToonCast"></video>
+      <figcaption>Made with ToonCast: our show, The Content Notes</figcaption>
+    </figure>
+  </section>
+
+  <section id="how">
+    <h2>How it <em>works</em></h2>
+    <ol class="steps">
+      <li><b>Set up in 10 minutes</b><span>Type <code>/character-studio</code> in Claude, answer 5 quick questions and drop in a photo of each person (and your pet, if you want).</span></li>
+      <li><b>Approve your cast</b><span>Claude builds your 3D characters, your room and your voices, then shows you a preview to approve or tweak.</span></li>
+      <li><b>Make episodes</b><span>Give a topic (or let it find one), and Claude writes the conversation, animates it and renders a finished vertical video.</span></li>
+    </ol>
+  </section>
+
+  <section id="plans">
+    <h2>Pick your <em>version</em></h2>
+    <div class="plans">
+      <div class="plan">
+        <h3>ToonCast Studio</h3>
+        <div class="price"><b>$29</b><s>$49</s><small>Launch price</small></div>
+        <p class="note" style="margin:0">The animation engine. You bring the topics, it makes the episodes.</p>
+        <ul>
+          <li>Your characters made from your photos (1–2 people + a pet)</li>
+          <li>Your room: bedroom, office, café or studio, in your colours</li>
+          <li>Voices with ElevenLabs, your own or stock</li>
+          <li>Lip-sync, camera moves, captions and title cards</li>
+          <li><span><code>/new-episode</code>: topic in, finished 30–60 s video out</span></li>
+          <li>Unlimited episodes, yours to keep</li>
+        </ul>
+        <span class="btn" role="button" aria-disabled="true">Coming soon</span>
+      </div>
+
+      <div class="plan best">
+        <span class="ribbon">Most complete</span>
+        <h3>ToonCast Studio + Viral Engine</h3>
+        <div class="price"><b>$49</b><s>$79</s><small>Launch price</small></div>
+        <p class="note" style="margin:0">The animation engine plus a viral video researcher that finds your topics for you.</p>
+        <ul>
+          <li>Everything in ToonCast Studio</li>
+          <li class="plus">Researches the 10 top-performing videos in your niche right now</li>
+          <li class="plus">Ranks them by how much they beat their account's usual views</li>
+          <li class="plus">Rewrites the best ideas as a conversation between your characters</li>
+          <li class="plus"><span><code>/viral-episode</code>: one command from trend to finished video</span></li>
+        </ul>
+        <span class="btn solid" role="button" aria-disabled="true">Coming soon</span>
+      </div>
+    </div>
+    <p class="note" style="margin-top:14px">One-time payment. Upgrade from ToonCast Studio to Studio + Viral Engine later for $30.</p>
+  </section>
+
+  <section>
+    <h2>What you'll <em>need</em></h2>
+    <div class="need">
+      <div><b>Claude Pro or Max</b><span>ToonCast runs inside the Claude desktop app's Code tab. Max is more comfortable for long renders.</span></div>
+      <div><b>ElevenLabs</b><span>Free works with stock voices. About $5/month to clone your own voice from a 1-minute recording.</span></div>
+      <div><b>A Mac or Windows computer</b><span>Claude installs the rest for you. No 3D or editing skills, no graphics card needed.</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Questions</h2>
+    <details><summary>Will the character look exactly like me?</summary><p>It looks like a low-poly 3D version of you: your skin tone, hair, glasses, beard and outfit colours. That's the charm of the style. It isn't a photo-real portrait.</p></details>
+    <details><summary>Do I need to know animation or code?</summary><p>No. You answer questions, approve a preview and give topics. Claude does the building, animating and rendering.</p></details>
+    <details><summary>How long does one episode take?</summary><p>A few minutes of your time. Claude then works on its own while the episode renders, usually well under an hour on a normal computer.</p></details>
+    <details><summary>Can my business use it?</summary><p>Yes. It's built on Remotion, which is free for individuals and teams of up to 3 people. Bigger companies need their own Remotion company licence.</p></details>
+    <details><summary>When can I buy it?</summary><p>Very soon. We're finishing setup and testing it with real customers first. Follow <a href="https://www.instagram.com/ayumiandmike/" style="color:var(--beige)">@ayumiandmike</a> for the launch.</p></details>
+  </section>
+
+  <footer>Made with care by <b>Ayumi &amp; Mike</b> · <a href="../free-lab/">Free Lab</a> · <a href="../paid-lab/">Paid Lab</a></footer>
+</main>
+</body>
+</html>
