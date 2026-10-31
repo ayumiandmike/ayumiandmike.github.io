@@ -27,7 +27,9 @@
 
 .plans { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: stretch; }
 .plan { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 26px 24px; display: grid; gap: 14px; align-content: start; }
-.plan.best { border-color: var(--beige); position: relative; }
+.plan.best { border: 2px solid var(--beige); position: relative; box-shadow: 0 0 0 6px rgba(217,196,163,.10), 0 24px 60px rgba(0,0,0,.5); }
+.why { background: rgba(217,196,163,.12); border: 1px solid rgba(217,196,163,.35); border-radius: 10px; padding: 10px 12px; font-size: 14px; color: var(--fg); margin: 0; }
+.why b { color: var(--beige); }
 .plan .ribbon { position: absolute; top: -12px; left: 24px; background: var(--beige); color: var(--ink); font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; border-radius: 999px; padding: 5px 12px; }
 .plan h3 { font-family: var(--display); font-weight: 500; font-size: 34px; line-height: 1.05; margin: 0; }
 .price { display: flex; align-items: baseline; gap: 10px; }
@@ -56,7 +58,18 @@ details p { color: var(--muted); margin: 10px 0 0; max-width: 64ch; }
 @media (max-width: 760px) {
   .hero { grid-template-columns: 1fr; gap: 28px; }
   .phone { width: min(280px, 100%); }
-  .steps, .plans, .need { grid-template-columns: 1fr; }
+  .steps, .need { grid-template-columns: 1fr; }
+  .plans { gap: 10px; }
+  .plan { padding: 22px 12px 16px; gap: 10px; }
+  .plan h3 { font-size: 22px; }
+  .price { flex-wrap: wrap; gap: 4px 8px; }
+  .price b { font-size: 40px; }
+  .price s { font-size: 14px; }
+  .price small { flex-basis: 100%; font-size: 10px; }
+  .plan li { font-size: 13px; grid-template-columns: 14px 1fr; gap: 6px; }
+  .plan .ribbon { left: 12px; font-size: 9px; padding: 4px 9px; }
+  .why { font-size: 12.5px; padding: 8px 9px; }
+  .plan .btn { padding: 14px 10px; font-size: 13px; }
 }
 </style>
 </head>
@@ -109,10 +122,10 @@ details p { color: var(--muted); margin: 10px 0 0; max-width: 64ch; }
       </div>
 
       <div class="plan best">
-        <span class="ribbon">Most complete</span>
+        <span class="ribbon">Recommended</span>
         <h3>ToonCast Studio + Viral Engine</h3>
         <div class="price"><b>$49</b><s>$79</s><small>Launch price</small></div>
-        <p class="note" style="margin:0">The animation engine plus a viral video researcher that finds your topics for you.</p>
+        <p class="why"><b>Why we recommend it:</b> no research and no scriptwriting. It finds what's already going viral in your niche and writes the episode for you, so you only press go.</p>
         <ul>
           <li>Everything in ToonCast Studio</li>
           <li class="plus">Researches the 10 top-performing videos in your niche right now</li>
